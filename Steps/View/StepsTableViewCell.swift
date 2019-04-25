@@ -9,13 +9,7 @@
 import UIKit
 
 class StepsTableViewCell: UITableViewCell{
-    
-//    var step: Step?{
-//        didSet{
-//            weekday.text = step?.date
-//            step_num.text = "\(step?.count)"
-//        }
-//    }
+
     
     var weekday : UILabel = {
         let label = UILabel()

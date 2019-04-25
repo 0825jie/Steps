@@ -31,13 +31,6 @@ class ViewController: UIViewController {
         return btn
     }()
     
-    var icon: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(named: "auth")
-        img.isHidden = true
-        return img
-    }()
-    
     var authInfo: UILabel = {
         let label = UILabel()
         label.text = "*HealthKit authorized."
