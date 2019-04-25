@@ -10,8 +10,20 @@
 		96EF9885226FC6F200ECD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF9884226FC6F200ECD24C /* AppDelegate.swift */; };
 		96EF9887226FC6F200ECD24C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF9886226FC6F200ECD24C /* ViewController.swift */; };
 		96EF988A226FC6F200ECD24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EF9888226FC6F200ECD24C /* Main.storyboard */; };
-		96EF988C226FC6F400ECD24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF988B226FC6F400ECD24C /* Assets.xcassets */; };
 		96EF988F226FC6F400ECD24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EF988D226FC6F400ECD24C /* LaunchScreen.storyboard */; };
+		96EF9898226FC73A00ECD24C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EF9897226FC73A00ECD24C /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		96EF989B226FC85900ECD24C /* HealthKitSetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF989A226FC85900ECD24C /* HealthKitSetupService.swift */; };
+		96EF989D226FD13C00ECD24C /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF989C226FD13C00ECD24C /* StepsViewController.swift */; };
+		96EF989F226FD1C500ECD24C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF989E226FD1C500ECD24C /* Extension.swift */; };
+		96EF98A1226FE08200ECD24C /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF98A0226FE08200ECD24C /* StepViewModel.swift */; };
+		96EF98A3226FE13100ECD24C /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF98A2226FE13100ECD24C /* Step.swift */; };
+		96EF98A5226FE4B900ECD24C /* StepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF98A4226FE4B900ECD24C /* StepsTableViewCell.swift */; };
+		96EF98A7226FEAA800ECD24C /* GetStepsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF98A6226FEAA800ECD24C /* GetStepsService.swift */; };
+		96EF98A9226FEB8C00ECD24C /* StepsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF98A8226FEB8C00ECD24C /* StepsTableViewHeader.swift */; };
+		96EF98B12270152100ECD24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF98B02270152100ECD24C /* Assets.xcassets */; };
+		96EF98B32270153400ECD24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF98B22270153400ECD24C /* Assets.xcassets */; };
+		96F869E022712C03005C6C2A /* DataFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F869DF22712C03005C6C2A /* DataFormatterService.swift */; };
+		96F869E4227136A7005C6C2A /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F869E3227136A7005C6C2A /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +31,22 @@
 		96EF9884226FC6F200ECD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96EF9886226FC6F200ECD24C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96EF9889226FC6F200ECD24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96EF988B226FC6F400ECD24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96EF988E226FC6F400ECD24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96EF9890226FC6F400ECD24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96EF9897226FC73A00ECD24C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		96EF9899226FC76100ECD24C /* Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Steps.entitlements; sourceTree = "<group>"; };
+		96EF989A226FC85900ECD24C /* HealthKitSetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupService.swift; sourceTree = "<group>"; };
+		96EF989C226FD13C00ECD24C /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		96EF989E226FD1C500ECD24C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		96EF98A0226FE08200ECD24C /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
+		96EF98A2226FE13100ECD24C /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		96EF98A4226FE4B900ECD24C /* StepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewCell.swift; sourceTree = "<group>"; };
+		96EF98A6226FEAA800ECD24C /* GetStepsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStepsService.swift; sourceTree = "<group>"; };
+		96EF98A8226FEB8C00ECD24C /* StepsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewHeader.swift; sourceTree = "<group>"; };
+		96EF98B02270152100ECD24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Steps/Assets.xcassets; sourceTree = "<group>"; };
+		96EF98B22270153400ECD24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96F869DF22712C03005C6C2A /* DataFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatterService.swift; sourceTree = "<group>"; };
+		96F869E3227136A7005C6C2A /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EF9898226FC73A00ECD24C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +66,7 @@
 			children = (
 				96EF9883226FC6F100ECD24C /* Steps */,
 				96EF9882226FC6F100ECD24C /* Products */,
+				96EF9896226FC73A00ECD24C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +81,82 @@
 		96EF9883226FC6F100ECD24C /* Steps */ = {
 			isa = PBXGroup;
 			children = (
+				96EF9899226FC76100ECD24C /* Steps.entitlements */,
 				96EF9884226FC6F200ECD24C /* AppDelegate.swift */,
 				96EF9886226FC6F200ECD24C /* ViewController.swift */,
+				96EF989C226FD13C00ECD24C /* StepsViewController.swift */,
+				96F869E222713687005C6C2A /* Protocol */,
+				96EF98AB226FEC3400ECD24C /* ViewModel */,
+				96EF98AC226FEC5400ECD24C /* Model */,
+				96EF98AA226FEC2800ECD24C /* View */,
+				96EF98AD226FEC6A00ECD24C /* Service */,
+				96EF98AE226FEC8300ECD24C /* Extension */,
 				96EF9888226FC6F200ECD24C /* Main.storyboard */,
-				96EF988B226FC6F400ECD24C /* Assets.xcassets */,
 				96EF988D226FC6F400ECD24C /* LaunchScreen.storyboard */,
+				96EF98B22270153400ECD24C /* Assets.xcassets */,
 				96EF9890226FC6F400ECD24C /* Info.plist */,
 			);
 			path = Steps;
+			sourceTree = "<group>";
+		};
+		96EF9896226FC73A00ECD24C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96EF98B02270152100ECD24C /* Assets.xcassets */,
+				96EF9897226FC73A00ECD24C /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96EF98AA226FEC2800ECD24C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96EF98A8226FEB8C00ECD24C /* StepsTableViewHeader.swift */,
+				96EF98A4226FE4B900ECD24C /* StepsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96EF98AB226FEC3400ECD24C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96EF98A0226FE08200ECD24C /* StepViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96EF98AC226FEC5400ECD24C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96EF98A2226FE13100ECD24C /* Step.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96EF98AD226FEC6A00ECD24C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				96EF989A226FC85900ECD24C /* HealthKitSetupService.swift */,
+				96EF98A6226FEAA800ECD24C /* GetStepsService.swift */,
+				96F869DF22712C03005C6C2A /* DataFormatterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		96EF98AE226FEC8300ECD24C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				96EF989E226FD1C500ECD24C /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		96F869E222713687005C6C2A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				96F869E3227136A7005C6C2A /* Protocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +191,11 @@
 				TargetAttributes = {
 					96EF9880226FC6F100ECD24C = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,7 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EF988F226FC6F400ECD24C /* LaunchScreen.storyboard in Resources */,
-				96EF988C226FC6F400ECD24C /* Assets.xcassets in Resources */,
+				96EF98B12270152100ECD24C /* Assets.xcassets in Resources */,
+				96EF98B32270153400ECD24C /* Assets.xcassets in Resources */,
 				96EF988A226FC6F200ECD24C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +237,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EF9887226FC6F200ECD24C /* ViewController.swift in Sources */,
+				96EF989F226FD1C500ECD24C /* Extension.swift in Sources */,
 				96EF9885226FC6F200ECD24C /* AppDelegate.swift in Sources */,
+				96EF98A3226FE13100ECD24C /* Step.swift in Sources */,
+				96EF98A9226FEB8C00ECD24C /* StepsTableViewHeader.swift in Sources */,
+				96EF989D226FD13C00ECD24C /* StepsViewController.swift in Sources */,
+				96EF98A5226FE4B900ECD24C /* StepsTableViewCell.swift in Sources */,
+				96EF989B226FC85900ECD24C /* HealthKitSetupService.swift in Sources */,
+				96F869E022712C03005C6C2A /* DataFormatterService.swift in Sources */,
+				96EF98A7226FEAA800ECD24C /* GetStepsService.swift in Sources */,
+				96EF98A1226FE08200ECD24C /* StepViewModel.swift in Sources */,
+				96F869E4227136A7005C6C2A /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +391,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Steps/Steps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F2QB4ZB9C9;
+				DEVELOPMENT_TEAM = 934C7R38NC;
 				INFOPLIST_FILE = Steps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,8 +410,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Steps/Steps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F2QB4ZB9C9;
+				DEVELOPMENT_TEAM = 934C7R38NC;
 				INFOPLIST_FILE = Steps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
