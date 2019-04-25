@@ -34,12 +34,16 @@ class GetStepsService: HKQuery {
         let interval = NSDateComponents()
         interval.day = 1
         let now = Date()
-         let startDay = Calendar.current.date(byAdding: .day, value: 7*(page - 1), to: now)
-         let endDay = Calendar.current.date(byAdding: .day, value: 7*(page), to: now)
-        let today = calendar.startOfDay(for: endDay!)
-        let anchorDate = today
+        let today = calendar.startOfDay(for: now)
+        var components = DateComponents()
+        components.day = 1
+        let todayend = calendar.date(byAdding: components, to: today)
         
-         let predicate = HKQuery.predicateForSamples(withStart: startDay, end: endDay, options: .strictEndDate)
+        let startDay = Calendar.current.date(byAdding: .hour, value: 7*(page - 1)*24, to: todayend!)
+        let endDay = Calendar.current.date(byAdding: .hour, value: 7*(page)*24, to: todayend!)
+        
+        let anchorDate = today
+        let predicate = HKQuery.predicateForSamples(withStart: startDay, end: endDay, options: .strictEndDate)
 
         let quantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
 
