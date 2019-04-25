@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepsTableViewHeader: UIView{
+class StepsTableViewHeader: UIView {
     weak var delegate: StepUpdateDelegate?
 
     var leftIcon: UIImageView = {
@@ -49,6 +49,26 @@ class StepsTableViewHeader: UIView{
         return label
     }()
     
+    var orderBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "down"), for: .normal)
+        btn.layer.cornerRadius = 12
+        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderWidth = 1
+        return btn
+    }()
+    
+    let upImg: UIImage = {
+        let img = UIImage(named: "up")
+        return img!
+    }()
+    
+    let downImg: UIImage = {
+        let img = UIImage(named: "down")
+        return img!
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -60,8 +80,13 @@ class StepsTableViewHeader: UIView{
         addSubview(rightBtn)
         rightBtn.anchor(top: topAnchor, left: nil, bottom: bottomAnchor, right: rightAnchor, topPadding: 40, leftPadding: 0, bottomPadding: 40, rightPadding: 20, width: 40, height: 0)
         
-        leftBtn.addTarget(self, action: #selector(handlePreWeek), for: .allTouchEvents)
-        rightBtn.addTarget(self, action: #selector(handleNextWeek), for: .allTouchEvents)
+        leftBtn.addTarget(self, action: #selector(handlePreWeek), for: .touchUpInside)
+        rightBtn.addTarget(self, action: #selector(handleNextWeek), for: .touchUpInside)
+        
+        addSubview(orderBtn)
+        orderBtn.anchor(top: nil, left: nil, bottom: bottomAnchor, right: rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 10, rightPadding: 16, width: 24, height: 24)
+        orderBtn.addTarget(self, action: #selector(reorder), for: .touchUpInside)
+        
         
     }
     
@@ -83,11 +108,21 @@ class StepsTableViewHeader: UIView{
         addSubview(step_total)
         step_total.anchor(top: topAnchor, left: nil, bottom: bottomAnchor, right: rightAnchor, topPadding: 10, leftPadding: 8, bottomPadding: 10, rightPadding: 60, width: 160, height: 0)
         
-        
     }
     
     @objc func handlePreWeek(){
         delegate?.fetchPre()
+    }
+    
+    @objc func reorder(){
+    
+        
+        if orderBtn.currentImage == downImg {
+            orderBtn.setImage(upImg, for: .normal)
+        } else {
+            orderBtn.setImage(downImg, for: .normal)
+        }
+        delegate?.reOrder()
     }
     
     @objc func handleNextWeek(){
@@ -95,6 +130,6 @@ class StepsTableViewHeader: UIView{
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
 }

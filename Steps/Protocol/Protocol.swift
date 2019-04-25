@@ -13,4 +13,5 @@ protocol StepUpdateDelegate: class {
     func failFetchData(error: String)
     func fetchPre()
     func fetchNext()
+    func reOrder()
 }

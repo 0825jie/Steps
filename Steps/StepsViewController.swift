@@ -18,6 +18,8 @@ class StepsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let cellId = "cellId"
     
     let stepViewModel = StepViewModel()
+    let header = StepsTableViewHeader()
+   
     
     override func viewWillAppear(_ animated: Bool) {
         stepViewModel.delegate = self
@@ -30,6 +32,7 @@ class StepsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     fileprivate func setupView(){
+        header.delegate = self
         view.addSubview(tableView)
         tableView.backgroundColor = UIColor(red: 0.9333, green: 0.9294, blue: 0.9059, alpha: 1.0)
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
@@ -40,8 +43,14 @@ class StepsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func finishFetchData() {
-        tableView.reloadData()
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
     }
+    
+    func reOrder() {
+        stepViewModel.reOrder()
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+    }
+    
     
     func failFetchData(error: String) {
         let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
@@ -56,14 +65,12 @@ class StepsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchNext() {
         stepViewModel.getNextPage()
     }
-    
-    @objc func handleCancel() {
-        dismiss(animated: true, completion: nil)
+        
+    func updateHeader() {
+        
     }
     
-     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = StepsTableViewHeader()
-        header.delegate = self
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         header.configure(total: stepViewModel.getTotalSteps())
         return header
     }
@@ -81,7 +88,6 @@ class StepsViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
             cell.configure(with: stepViewModel.steps![indexPath.row], max: stepViewModel.maxStep!)
      
-       
         return cell
     }
     

@@ -78,14 +78,16 @@ class ViewController: UIViewController {
         view.addSubview(authInfo)
         authInfo.anchor(top: startBtn.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, topPadding: 4, leftPadding: (view.frame.width - 200)/2, bottomPadding: 0, rightPadding: 0, width: 200, height: 20)
 
-        authBtn.addTarget(self, action: #selector(authorizeHealthKit), for: .allTouchEvents)
-        startBtn.addTarget(self, action: #selector(handleStart), for: .allTouchEvents)
+        authBtn.addTarget(self, action: #selector(authorizeHealthKit), for: .touchUpInside)
+        startBtn.addTarget(self, action: #selector(handleStart), for: .touchUpInside)
     }
     
     @objc fileprivate func handleStart(){
         
         let nextPage = StepsViewController()
         present(nextPage, animated: true)
+       
+        
     }
     
     
@@ -114,6 +116,7 @@ class ViewController: UIViewController {
     }
     
     func update(){
+        print()
         authBtn.removeFromSuperview()
         authInfo.isHidden = false
         startBtn.isHidden = false

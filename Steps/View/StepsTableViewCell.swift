@@ -89,11 +89,7 @@ class StepsTableViewCell: UITableViewCell{
         
         addSubview(step_num)
         step_num.anchor(top: topAnchor, left: bar.rightAnchor, bottom: bottomAnchor, right: nil, topPadding: 10, leftPadding: 8, bottomPadding: 10, rightPadding: 0, width: 100, height: 0)
-        
-//        addSubview(step_title)
-//        step_title.anchor(top: topAnchor, left: step_num.rightAnchor, bottom: bottomAnchor, right: nil, topPadding: 10, leftPadding: 8, bottomPadding: 10, rightPadding: 10, width: 40, height: 0)
-//
-        
+
         
     }
     
@@ -113,19 +109,7 @@ class StepsTableViewCell: UITableViewCell{
             }
             constrain = bar.widthAnchor.constraint(equalToConstant: (CGFloat(Int(frame.width*0.6)*Int(step_num.text!)!/weekMax!)))
             constrain?.isActive = true
-            
-           
-//            addSubview(weekday)
-//            weekday.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, topPadding: 8, leftPadding: 16, bottomPadding: 0, rightPadding: 0, width: frame.width*0.15, height: 0)
-//
-//            addSubview(date)
-//            date.anchor(top: weekday.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topPadding: 8, leftPadding: 16, bottomPadding: 8, rightPadding: 0, width: frame.width*0.15, height: 0)
-//
-//            addSubview(bar)
-//            bar.anchor(top: topAnchor, left: weekday.rightAnchor, bottom: bottomAnchor, right: nil, topPadding: frame.height * 0.4, leftPadding: 8, bottomPadding: frame.height * 0.4, rightPadding: 0, width: (CGFloat(Int(frame.width*0.6)*Int(step_num.text!)!/weekMax!)), height: 0)
-//
-//            addSubview(step_num)
-//            step_num.anchor(top: topAnchor, left: bar.rightAnchor, bottom: bottomAnchor, right: nil, topPadding: 10, leftPadding: 8, bottomPadding: 10, rightPadding: 0, width: 100, height: 0)
+
 //
         }
     }

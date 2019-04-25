@@ -14,6 +14,7 @@ final class StepViewModel {
     var isFetchingData = false
     weak var delegate: StepUpdateDelegate?
     var maxStep: Int?
+    var acsOrder = true
     
     init() {
        self.curPage = 0
@@ -41,6 +42,7 @@ final class StepViewModel {
             self.curPage = page
             self.steps = result
             self.maxStep = result.last?.weekMax
+            self.order()
             
             DispatchQueue.main.async {
                 self.delegate?.finishFetchData()
@@ -81,6 +83,33 @@ final class StepViewModel {
         return steps.count
     }
     
+    func acs(s1:Step, s2:Step) -> Bool {
+        return s1.date < s2.date
+    }
+    
+    func des(s1:Step, s2:Step) -> Bool {
+        return s1.date > s2.date
+    }
+    
+    func reOrder() {
+        if acsOrder {
+            steps = steps?.sorted(by: des)
+            acsOrder = false
+        } else {
+            acsOrder = true
+            steps = steps?.sorted(by: acs)
+        }
+       
+    }
+    
+    func order() {
+        if acsOrder {
+            steps = steps?.sorted(by: acs)
+        } else {
+            steps = steps?.sorted(by: des)
+        }
+    }
+   
     
     
 }
